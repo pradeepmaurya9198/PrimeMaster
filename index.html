@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeMaster Prints Lab LLP | Gorakhpur's Best Printing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #000; }
+        .brand-yellow { color: #F2EC18; }
+        .bg-brand-yellow { background-color: #F2EC18; }
+        
+        @keyframes logoEntrance {
+            0% { opacity: 0; transform: scale(0.8) translateY(-20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 0px rgba(242, 236, 24, 0)); }
+            50% { filter: drop-shadow(0 0 15px rgba(242, 236, 24, 0.4)); }
+            100% { filter: drop-shadow(0 0 0px rgba(242, 236, 24, 0)); }
+        }
+        .animate-logo { animation: logoEntrance 1.2s ease-out forwards, pulse 3s infinite ease-in-out 1.2s; }
+
+        .hero-bg { 
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+            url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=1920&auto=format&fit=crop'); 
+            background-size: cover; background-position: center;
+        }
+
+        .slider-wrapper { position: relative; width: 100%; height: 500px; overflow: hidden; border-radius: 20px; border: 4px solid #18181b; }
+        .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; }
+        .slide.active { opacity: 1; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .slide-overlay { 
+            position: absolute; bottom: 0; left: 0; right: 0; 
+            background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
+            padding: 40px 20px; text-align: center;
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .contact-card { background-color: #000; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="text-white">
+
+    <nav class="fixed w-full z-50 bg-black/95 border-b border-zinc-800 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-6"> 
+            <img src="logo.jpg" alt="Logo" class="h-10 w-auto animate-logo" onerror="this.src='https://via.placeholder.com/40/F2EC18/000000?text=P'">
+            <span class="font-black text-xl tracking-[0.15em] uppercase">PRIMEMASTER <span class="brand-yellow pl-1">PRINTS</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+            <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+            <a href="#about" class="hover:text-yellow-400 transition">About</a>
+            <a href="#services" class="hover:text-yellow-400 transition">Services</a>
+            <a href="#contact" class="text-yellow-400 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400 hover:text-black transition">Get Quote</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <div class="mb-4">
+            <img src="logo.jpg" alt="PrimeMaster Prints" class="w-24 md:w-32 mx-auto mb-8 animate-logo" onerror="this.style.display='none'">
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-tight tracking-tight">PrimeMaster Prints Lab <span class="brand-yellow">LLP</span></h1>
+        </div>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl font-medium mb-10 italic">
+            "छपाई का सही ठिकाना, हर डिज़ाइन, हर प्रिंट - बिल्कुल परफेक्ट, उचित दर पर"
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="bg-brand-yellow text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition uppercase tracking-widest">Inquiry Now</a>
+            <a href="tel:9506765440" class="border-2 border-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition uppercase tracking-widest">Call 9506765440</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-black px-6 border-b border-zinc-900">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-brand-yellow text-sm font-bold uppercase tracking-[0.3em] mb-6">Who We Are</h2>
+            <h3 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Elevating Gorakhpur's Printing Standard Since Day One.</h3>
+            <p class="text-gray-400 text-lg md:text-xl leading-relaxed">
+                At <strong>PrimeMaster Prints Lab LLP</strong>, we don't just print; we bring your ideas to life with precision and passion. Whether it's a small business card or a massive outdoor flex, our facility uses state-of-the-art technology to ensure color accuracy and long-lasting quality. We pride ourselves on being the most trusted hub for businesses and individuals who refuse to compromise on aesthetics.
+            </p>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-black px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black uppercase tracking-tighter">Work <span class="brand-yellow">Showcase</span></h2>
+                <p class="text-gray-400 mt-2 uppercase text-xs tracking-widest">Visualizing Quality Excellence</p>
+            </div>
+            <div class="slider-wrapper shadow-2xl">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200" alt="Flex Printing">
+                    <div class="slide-overlay">
+                        <h4 class="text-2xl font-bold brand-yellow">High Definition Flex Printing</h4>
+                        <p class="text-sm text-gray-200 mt-2 uppercase tracking-widest">Industrial Quality • Weatherproof • Vibrant Colors</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1200" alt="Corporate Branding">
+                    <div class="slide-overlay">
+                        <h4 class="text-2xl font-bold brand-yellow">Corporate Branding Solutions</h4>
+                        <p class="text-sm text-gray-200 mt-2 uppercase tracking-widest">Business Cards • Letterheads • Identity Profiles</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1586075010633-24701bd6e2b4?auto=format&fit=crop&w=1200" alt="Wedding Cards">
+                    <div class="slide-overlay">
+                        <h4 class="text-2xl font-bold brand-yellow">Premium Designer Wedding Cards</h4>
+                        <p class="text-sm text-gray-200 mt-2 uppercase tracking-widest">Luxury Finishes • Custom Designs • Elegant Paper</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-6 bg-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase tracking-tighter">PREMIUM PRINTING <span class="brand-yellow">SERVICES</span></h2>
+                <div class="h-1 w-20 bg-brand-yellow mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex justify-center flex-wrap gap-4 mb-16">
+                <button onclick="openTab(event, 'flex-tab')" class="tab-btn active bg-brand-yellow text-black px-8 py-3 font-bold rounded-full shadow-lg transition-all duration-300 uppercase">Large Format</button>
+                <button onclick="openTab(event, 'corp-tab')" class="tab-btn border border-zinc-600 px-8 py-3 font-bold rounded-full hover:border-yellow-400 transition-all duration-300 uppercase">Corporate</button>
+                <button onclick="openTab(event, 'event-tab')" class="tab-btn border border-zinc-600 px-8 py-3 font-bold rounded-full hover:border-yellow-400 transition-all duration-300 uppercase">Events</button>
+            </div>
+
+            <div id="flex-tab" class="tab-content active">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800" class="rounded-3xl border-4 border-zinc-800 h-80 w-full object-cover shadow-2xl">
+                    <div>
+                        <h3 class="text-3xl font-bold brand-yellow mb-4 uppercase">Large Format Print Solutions</h3>
+                        <p class="text-gray-400 text-lg mb-6 leading-relaxed">Our Large Format printing is engineered for maximum visual impact and extreme durability. Using industrial-grade machinery, we produce crystal clear graphics that command attention from a distance. Ideal for outdoor advertising, retail displays, and high-traffic public areas.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> HD Flex & Glossy Vinyl Printing for vibrant displays</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Rigid Sunboard & Sunpack Solutions for store branding</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Weather-resistant UV Inks that prevent fading in sunlight</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="corp-tab" class="tab-content">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img src="https://images.unsplash.com/photo-1586075010633-24701bd6e2b4?auto=format&fit=crop&w=800" class="rounded-3xl border-4 border-zinc-800 h-80 w-full object-cover shadow-2xl">
+                    <div>
+                        <h3 class="text-3xl font-bold brand-yellow mb-4 uppercase">Professional Corporate Printing</h3>
+                        <p class="text-gray-400 text-lg mb-6 leading-relaxed">We provide end-to-end printing solutions to maintain your brand's professional identity. From essential office documents to marketing materials, our high-precision printing ensures that your brand looks sharp, consistent, and trustworthy to every client you meet.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Custom Bill Books, Receipt Books & Letterheads</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> High-quality PVC ID Cards & Customized Lanyards</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Bulk Promotional Flyers, Leaflets & Tri-fold Brochures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="event-tab" class="tab-content">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&w=800" class="rounded-3xl border-4 border-zinc-800 h-80 w-full object-cover shadow-2xl">
+                    <div>
+                        <h3 class="text-3xl font-bold brand-yellow mb-4 uppercase">Luxury Event & Wedding Prints</h3>
+                        <p class="text-gray-400 text-lg mb-6 leading-relaxed">Make your special occasions unforgettable with our designer printing services. We blend luxury paper textures with premium ink finishes to create invitations and event decor that reflect the grandeur of your celebration. Every detail is crafted to perfection.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Premium Luxury Wedding Cards with unique finishes</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> High-Finish Celebration Standees & Welcome Boards</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle brand-yellow text-xl"></i> Personalized Photo Frames, Posters & Wall Art</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-yellow py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-black md:w-1/2">
+                <h2 class="text-5xl font-black mb-6 uppercase tracking-tight">CERTIFIED & REGISTERED</h2>
+                <p class="text-xl font-medium mb-10 opacity-90 leading-relaxed">
+                    PrimeMaster Prints Lab LLP is a government-recognized printing firm. Our registration ensures industrial quality standards and legal compliance, providing you with high-grade service you can depend on.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-file-invoice text-2xl"></i>
+                        <span class="text-xl font-bold">GSTIN: 09ABHFP8144Q1ZC</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-certificate text-2xl"></i>
+                        <span class="text-xl font-bold">Udyam: UDYAM-UP-32-0109325</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card p-6 md:p-8 text-white md:w-[500px]">
+                <h3 class="brand-yellow text-xl font-black uppercase mb-4 tracking-widest text-center">LOCATE US</h3>
+                
+                <a href="https://www.google.com/maps/place/Prime+Master+Prints+Lab/@26.6521573,83.365256,639m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3991430034279073:0x39bb08fce54713d2!8m2!3d26.6521525!4d83.3678309!16s%2Fg%2F11mscg8tkj?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="relative block w-full h-48 rounded-xl overflow-hidden mb-6 border border-zinc-800 hover:opacity-90 transition cursor-pointer">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.216669966597!2d83.3989392!3d26.64155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991400434279073%3A0x39bb08fc344713d2!2sPrime%20Master%20Prints%20Lab!5e0!3m2!1sen!2sin!4v1707750000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="absolute inset-0 bg-transparent z-10"></div>
+                </a>
+
+                <div class="space-y-4">
+                    <a href="https://www.google.com/maps/place/Prime+Master+Prints+Lab/@26.6521573,83.365256,639m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3991430034279073:0x39bb08fce54713d2!8m2!3d26.6521525!4d83.3678309!16s%2Fg%2F11mscg8tkj?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="block group text-center">
+                        <p class="text-gray-300 text-md leading-snug group-hover:text-yellow-400 transition">
+                            Varanasi Road, Mahavir Chhapra,<br>Gorakhpur, Uttar Pradesh 273401
+                        </p>
+                        <p class="text-brand-yellow text-[10px] mt-2 font-bold tracking-widest uppercase">Open Google Maps →</p>
+                    </a>
+                    
+                    <div class="h-[1px] bg-zinc-800 w-full"></div>
+                    
+                    <div class="space-y-3">
+                        <a href="tel:+919506765440" class="flex items-center justify-center gap-4 group">
+                            <i class="fa-solid fa-phone brand-yellow text-lg"></i>
+                            <span class="text-lg font-bold group-hover:text-yellow-400 transition">+91 9506765440</span>
+                        </a>
+                        <a href="mailto:primemasterprints@gmail.com" class="flex items-center justify-center gap-4 group">
+                            <i class="fa-solid fa-envelope brand-yellow text-lg"></i>
+                            <span class="text-lg font-bold group-hover:text-yellow-400 transition text-sm">primemasterprints@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto bg-zinc-900 p-10 rounded-3xl border border-zinc-800 shadow-2xl">
+            <h2 class="text-3xl font-black mb-8 text-center uppercase">Get a <span class="brand-yellow">Price Quote</span></h2>
+            <form onsubmit="handleMailSubmit(event)" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" id="name" placeholder="Name" required class="w-full p-4 bg-black border border-zinc-700 rounded-xl outline-none focus:border-yellow-400 text-white">
+                    <input type="tel" id="phone" placeholder="Phone Number" required class="w-full p-4 bg-black border border-zinc-700 rounded-xl outline-none focus:border-yellow-400 text-white">
+                </div>
+                <textarea id="msg" rows="4" placeholder="Your requirement..." required class="w-full p-4 bg-black border border-zinc-700 rounded-xl outline-none focus:border-yellow-400 text-white"></textarea>
+                <button type="submit" class="w-full bg-brand-yellow text-black font-black py-4 rounded-xl hover:bg-white transition uppercase tracking-widest">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-zinc-800 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-4 mb-4">
+                    <img src="logo.jpg" alt="Logo" class="h-8 w-auto">
+                    <span class="font-black text-lg tracking-widest uppercase">PRIMEMASTER <span class="brand-yellow pl-1">PRINTS</span></span>
+                </div>
+                <p class="text-gray-500 text-sm max-w-xs">High-quality printing services in Gorakhpur. From corporate branding to personal events, we print your vision.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+                <a href="#gallery" class="hover:text-yellow-400 transition">Gallery</a>
+                <a href="#services" class="hover:text-yellow-400 transition">Services</a>
+                <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-gray-500 text-xs uppercase tracking-widest">© 2026 PrimeMaster Prints Lab LLP.</p>
+                <p class="text-gray-600 text-[10px] mt-2 italic">All Rights Reserved. Registered in Uttar Pradesh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919506765440" target="_blank" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-3xl z-50 hover:scale-110 transition-all shadow-2xl">
+        <i class="fa-brands fa-whatsapp text-white"></i>
+    </a>
+
+    <script>
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const btns = document.querySelectorAll('.tab-btn');
+            contents.forEach(c => c.classList.remove('active'));
+            btns.forEach(b => {
+                b.classList.remove('active', 'bg-brand-yellow', 'text-black');
+                b.classList.add('border', 'border-zinc-600', 'text-white');
+            });
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active', 'bg-brand-yellow', 'text-black');
+            evt.currentTarget.classList.remove('border', 'border-zinc-600', 'text-white');
+        }
+
+        let cur = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            if(slides.length > 0) {
+                slides[cur].classList.remove('active');
+                cur = (cur + 1) % slides.length;
+                slides[cur].classList.add('active');
+            }
+        }, 3500);
+
+        function handleMailSubmit(e) {
+            e.preventDefault();
+            const n = document.getElementById('name').value;
+            const p = document.getElementById('phone').value;
+            const m = document.getElementById('msg').value;
+            window.location.href = `mailto:primemasterprints@gmail.com?subject=New Inquiry&body=Name: ${n}%0D%0APhone: ${p}%0D%0ARequirement: ${m}`;
+        }
+    </script>
+</body>
+</html>
